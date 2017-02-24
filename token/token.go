@@ -1,3 +1,8 @@
+/*
+Package tokens describes tokens recognized by lexer,
+and implements utility functions.
+*/
+
 package token
 
 type TokenType string
