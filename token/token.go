@@ -34,9 +34,24 @@ const (
 	// Keywords
 	FUNCTION	= "FN"
 	LET			= "LET"
+	
+	// Graph Keywords
 	GRAPH		= "G"
 	VERTEX		= "VERTEX"
 	ALLVERTS	= "V"
 	EDGE		= "EDGE"
 	ALLEDGES	= "E"
 )
+
+// TO DO: Implement graph utility by recognizing keywords
+var keywords = map[string]TokenType{
+	"fn": FUNCTION,
+	"let": LET,
+}
+
+func LookupIdent(ident string) TokenType {
+	if tok, ok := keywords[ident]; ok {
+		return tok // return keyword's TokenType cosntant
+	}
+	return IDENT // return TokenType for user-defined identifiers
+}
